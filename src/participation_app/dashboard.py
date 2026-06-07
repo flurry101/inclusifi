@@ -384,7 +384,7 @@ def render_feedback_insights(student_df: pd.DataFrame) -> None:
 
     with st.expander("Read qualitative feedback"):
         if records:
-            st.dataframe(pd.DataFrame({"feedback": records}), width=True)
+            st.dataframe(pd.DataFrame({"feedback": records}), use_container_width=True)
         else:
             st.write("No feedback comments to show.")
 
@@ -392,7 +392,7 @@ def render_feedback_insights(student_df: pd.DataFrame) -> None:
 def render_table(activity_df: pd.DataFrame) -> None:
     with st.expander("View filtered responses"):
         cols = ["name", "usn", "dept", "year", "gender", "activity", "frequency", "discouraged", "openness_score", "feedback"]
-        st.dataframe(activity_df[cols].reset_index(drop=True), width=True)
+        st.dataframe(activity_df[cols].reset_index(drop=True), use_container_width=True)
 
 
 def style_axis(ax, title: str, ylabel: str) -> None:
